@@ -287,6 +287,7 @@ function App() {
           <span>משחק חדש</span>
         </button>
       </header>
+      <span className={styles.divider}></span>
       <main>
         <table>
           <tbody>

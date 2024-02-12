@@ -13,8 +13,6 @@ header {
     width: 35%;
     height: 100%;
     padding: 25px;
-    border-right: 4px solid rgb(188, 189, 255);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.394);
     color: white;
     display: flex;
     flex-direction: column;
@@ -22,6 +20,15 @@ header {
     justify-content: space-between;
     text-align: center;
     text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.516);
+}
+
+.divider {
+    height: 100%;
+    width: 0.5vw;
+    min-width: 2px;
+    background-color: rgb(188, 189, 255);
+    box-shadow: 0 10px 25px rgb(255, 255, 255);
+
 }
 
 header h1 {
