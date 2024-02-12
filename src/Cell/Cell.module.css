@@ -1,0 +1,40 @@
+.cell {
+    width: 7vw;
+    aspect-ratio: 1/1;
+    max-width: 75px;
+    max-height: 75px;
+    margin: 3px;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(135deg, rgb(151, 149, 181) 0%, rgb(2, 0, 140) 0%, rgb(0, 0, 0) 100%);
+    border-radius: 100%;
+    border: 3px solid rgb(87, 87, 255);
+    /* z-index: 100; */
+}
+
+#red {
+    background-color: #ffcbcb;
+    opacity: 1;
+    background-image: radial-gradient(circle at center center, #f32c2c, #ffcbcb), repeating-radial-gradient(circle at center center, #f32c2c, #f32c2c, 7px, transparent 14px, transparent 7px);
+    background-blend-mode: multiply;
+}
+
+#yellow {
+    background-color: #fff9aa;
+    opacity: 1;
+    background-image: radial-gradient(circle at center center, #f9ea10, #fff9aa), repeating-radial-gradient(circle at center center, #f9ea10, #f9ea10, 7px, transparent 14px, transparent 7px);
+    background-blend-mode: multiply;
+}
+
+#lowRed {
+    background-color: #6f5e5e;
+    opacity: 1;
+    background-image: radial-gradient(circle at center center, #ff9f9f, #fff8f8), repeating-radial-gradient(circle at center center, #ffe6e6, #ffe6e6, 7px, transparent 14px, transparent 7px);
+    background-blend-mode: multiply;
+}
+
+#lowYellow {
+    background-color: #898989;
+    opacity: 1;
+    background-image: radial-gradient(circle at center center, #fff891, #fffef5), repeating-radial-gradient(circle at center center, #fff68f, #fffee9, 7px, transparent 14px, transparent 7px);
+    background-blend-mode: multiply;
+}
