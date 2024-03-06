@@ -32,7 +32,7 @@
 .red .title {
     color: #f32c2c;
     font-size: 1.5vw;
-    font-weight: 700;
+    font-weight: 400;
     /* padding: 2px 8px; */
     /* border: 2px solid #f32c2c;
     border-radius: 10px 10px 0 0;
@@ -43,7 +43,7 @@
 .yellow .title {
     font-size: 1.5vw;
     color: #f9ea10;
-    font-weight: 700;
+    font-weight: 400;
     /* padding: 2px 8px; */
     /* border: 2px solid #f9ea10;
     border-radius: 10px 10px 0 0;

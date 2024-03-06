@@ -20,6 +20,25 @@ header {
     justify-content: space-between;
     text-align: center;
     text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.516);
+    transition: 0.3s;
+}
+
+/* כל מה שקשור לבחירת המשחק */
+#select{
+    width: 100%;
+    justify-content: center;
+    transition: 0.3s;
+}
+.selectMode{
+    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.bigImage{
+    width: 22vw;
+    min-width: 200px;
+    transition: 0.3s;
 }
 
 .divider {
@@ -29,6 +48,15 @@ header {
     background-color: rgb(188, 189, 255);
     box-shadow: 0 10px 25px rgb(255, 255, 255);
 
+}
+
+.headerInfo{
+    /* border: 2px solid white; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
@@ -45,6 +73,7 @@ header h1 {
 header img {
     width: 15vw;
     margin-bottom: 30px;
+    transition: 0.3s;
 }
 
 .timers {
@@ -65,6 +94,7 @@ header img {
     transform: scale(1);
     transition: 0.3s ease-in-out;
     margin-bottom: 1vw;
+    font-weight: 400;
 }
 .winner img {
     width: 25vw;
@@ -84,10 +114,10 @@ header img {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    
 }
 .newGame img {
     width: 20vw;
+    min-width: 170px;
     margin: 0;
 }
 .newGame span {
@@ -95,10 +125,22 @@ header img {
     font-size: 2vw;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.631);
     color: rgb(241, 241, 255);
-    font-family: 'Rubik Scribble', system-ui;
-    font-weight: 600;
+    /* font-family: 'Rubik Scribble', system-ui;
+    font-weight: 600; */
+    font-family: "Rubik Dirt", system-ui;
+    font-weight: 500;
+    font-style: normal;
 }
 
+.newGame:hover {
+    transform: scale(1.04);
+    transition: 0.2s;
+}
+
+.newGame:not(:hover) {
+    transform: scale(1);
+    transition: 0.2s;
+}
 header button:hover {
     transform: scale(1.04);
     transition: 0.2s;
