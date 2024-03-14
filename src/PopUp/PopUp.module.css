@@ -1,0 +1,117 @@
+.PopUp {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.63);
+    color: white;
+    text-align: center;
+}
+
+.PopUp>div {
+    animation: popUp 0.8s ease-in-out;
+    padding: 40px 20px;
+    border-radius: 7px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.362);
+    border: 2px solid rgb(87, 87, 255);
+    background: rgb(2, 0, 36);
+    background: linear-gradient(81deg, rgba(2, 0, 36, 1) 0%, rgb(2, 0, 125) 0%, rgb(0, 0, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+@keyframes popUp {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.image {
+    width: 37%;
+}
+
+.PopUp p {
+    font-size: 25px;
+}
+
+/* #PopUpBtn {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 800px;
+    font-family: "Rubik Dirt", system-ui;
+    font-size: 17px;
+    font-weight: 500;
+    color: white;
+    text-shadow: none;
+    background: transparent;
+    cursor: pointer;
+    box-shadow: transparent;
+    border: 1px solid #ffffff80;
+    transition: 0.5s ease;
+    user-select: none;
+  }
+  
+  #PopUpBtn:hover,
+  :focus {
+    color: #ffffff;
+    background: #f32c2c;
+    border: 1px solid #f32c2c;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 5px #f32c2c, 0 0 20px #f32c2c, 0 0 50px #f32c2c,
+      0 0 100px #f32c2c;
+  } */
+
+#PopUpBtn {
+    display: inline-block;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.375);
+    border: 2px solid rgb(87, 87, 255);
+    color: #FFFFFF;
+    text-align: center;
+    font-family: "Rubik Dirt", system-ui;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px 16px;
+    /* width: 130px; */
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#PopUpBtn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#PopUpBtn span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -20px;
+    transition: 0.5s;
+}
+
+#PopUpBtn:hover span {
+    padding-left: 20px;
+}
+
+#PopUpBtn:hover span:after {
+    opacity: 1;
+    left: 0;
+}
