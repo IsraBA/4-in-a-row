@@ -39,28 +39,44 @@ function OnlinePublic() {
   const nav = useNavigate();
 
   useEffect(() => {
-    socket.connect();
-    socket.emit('joinStrangersGame');
-
+    try {
+      if (localStorage.roomId && localStorage.playerId) {
+        socket.connect();
+        socket.emit('reconnect', { roomId: localStorage.roomId, playerId: localStorage.playerId })
+      } else {
+        socket.connect();
+        socket.emit('joinStrangersGame');
+      }
+    } catch (error) {
+      console.error(error)
+    }
     return () => {
+      delete localStorage.roomId;
+      delete localStorage.playerId;
       socket.disconnect();
     };
   }, []);
 
 
   socket.on('strangersGameWaiting', (roomDetails) => {
-    console.log(roomDetails)
+    localStorage.roomId = roomDetails.roomId;
+    localStorage.playerId = socket.id;
+    // console.log(roomDetails)
     setRoomId(roomDetails.roomId);
   })
 
   socket.on('strangersGameJoined', (roomDetails) => {
-    console.log(roomDetails)
+    // console.log(roomDetails)
     // בדיקה אם השחקן הנוכחי הוא היוצר של החדר
     const isCreator = roomDetails.creatorId === socket.id;
     // קביעת הצבע שלו על פי זה
     const playerColor = isCreator ? 'red' : 'yellow';
     setPlayer(playerColor);
-    console.log("this player is " + playerColor);
+    // console.log("this player is " + playerColor);
+    if (!isCreator) { 
+      localStorage.roomId = roomDetails.roomId;
+      localStorage.playerId = socket.id;
+    }
     setRoomId(roomDetails.roomId);
     setWaiting(false);
   })
@@ -69,7 +85,22 @@ function OnlinePublic() {
     // TODO: לשים כאן התראה שהשחקן השני התנתק
     if (!winner) {
       setMessage(true);
+      socket.disconnect();
     }
+  })
+
+  socket.on('playerReconnect', (roomDetails) => {
+    localStorage.playerId = socket.id;
+    setRoomId(roomDetails.roomId);
+    setWaiting(false);
+    // console.log('roomDetails: ', roomDetails);
+    setBoard(roomDetails.board);
+    // בדיקה אם השחקן הנוכחי הוא היוצר של החדר
+    const isCreator = roomDetails.creatorId === localStorage?.playerId;
+    // קביעת הצבע שלו על פי זה
+    const playerColor = isCreator ? 'red' : 'yellow';
+    setPlayer(playerColor);
+    setTurn(roomDetails.currentPlayerIndex);
   })
 
   socket.on('gameState', (data) => {
@@ -88,8 +119,9 @@ function OnlinePublic() {
     // console.log({ winner, fourInaRow });
     setWinner(winner);
     setFourInaRow(fourInaRow);
-    socket.emit('leave', { roomId });
     socket.disconnect();
+    delete localStorage.roomId;
+    delete localStorage.playerId;
   });
 
 
@@ -104,10 +136,14 @@ function OnlinePublic() {
 
   const exit = () => {
     if (winner) {
+      delete localStorage.roomId;
+      delete localStorage.playerId;
       nav('/');
     } else {
       socket.emit('leave', { roomId });
       socket.disconnect();
+      delete localStorage.roomId;
+      delete localStorage.playerId;
       nav('/');
     }
     // setBoard([
@@ -211,7 +247,7 @@ function OnlinePublic() {
         </header>
         <span className={styles.divider}></span>
         <main>
-          {message && <PopUp msg={<span>השחקן השני התנתק,<br/> ניצחת טכנית</span>} click={()=>nav('/')} clickMsg={"חזרה לדף הבית"}/>}
+          {message && <PopUp msg={<span>השחקן השני התנתק,<br /> ניצחת טכנית</span>} click={() => nav('/')} clickMsg={"חזרה לדף הבית"} />}
           <table>
             <tbody>
               <tr className={`${fourInaRow.length > 0 && styles.darker}`}></tr>
