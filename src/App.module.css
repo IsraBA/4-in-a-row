@@ -5,6 +5,7 @@
     flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
+    color: white;
     background: rgb(2, 0, 36);
     background: linear-gradient(81deg, rgba(2, 0, 36, 1) 0%, rgb(2, 0, 125) 0%, rgb(0, 0, 0) 100%);
 }
@@ -154,8 +155,50 @@ header button:not(:hover) {
 main {
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: 0.3s;
+}
+
+.redTurnMsg{
+    animation: turnMsg 0.7s ease-in-out forwards;
+    margin-top: -30px;
+    margin-bottom: 25px;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid rgb(243, 44, 44);
+    border-radius: 15px;
+    padding: 5px 20px;
+    transition: 0.3s;
+}
+.yelTurnMsg{
+    animation: turnMsg 0.7s ease-in-out forwards;
+    margin-top: -30px;
+    margin-bottom: 25px;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid rgb(249, 234, 16);
+    border-radius: 15px;
+    padding: 5px 20px;
+    transition: 0.3s;
+}
+@keyframes turnMsg {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 tbody {
@@ -201,7 +244,7 @@ tr {
     margin: 3px;
     background-color: #ffcbcb;
     opacity: 1;
-    background-image: radial-gradient(circle at center center, #f32c2c, #ffcbcb), repeating-radial-gradient(circle at center center, #f32c2c, #f32c2c, 7px, transparent 14px, transparent 7px);
+    background-image: radial-gradient(circle at center center, rgb(243, 44, 44), #ffcbcb), repeating-radial-gradient(circle at center center, #f32c2c, #f32c2c, 7px, transparent 14px, transparent 7px);
     background-blend-mode: multiply;
 }
 

@@ -8,7 +8,9 @@ import OnlineTimer from '../../../Timer/OnlineTimer';
 import { socket } from '../socket'
 import { useNavigate } from 'react-router-dom'
 import './leave.css'
+import './thinking.css'
 import PopUp from '../../../PopUp/PopUp'
+import Waiting from '../../../Waiting/Waiting'
 
 function OnlinePublic() {
 
@@ -73,7 +75,7 @@ function OnlinePublic() {
     const playerColor = isCreator ? 'red' : 'yellow';
     setPlayer(playerColor);
     // console.log("this player is " + playerColor);
-    if (!isCreator) { 
+    if (!isCreator) {
       localStorage.roomId = roomDetails.roomId;
       localStorage.playerId = socket.id;
     }
@@ -123,6 +125,13 @@ function OnlinePublic() {
     delete localStorage.roomId;
     delete localStorage.playerId;
   });
+
+  // טיימרים
+  socket.on('timeUpdate', (timers) => {
+    setRedTime(timers[0].time);
+    setYellowTime(timers[1].time)
+    // console.log('player 1: ', timers[0].time, 'player 2: ', timers[1].time)
+  })
 
 
   const dropPiece = (cIndex) => {
@@ -206,9 +215,41 @@ function OnlinePublic() {
     } return false;
   };
 
+  const manageTurns = () => {
+    if (winner) { return <>המשחק נגמר</> }
+    else {
+      return <>
+        {turn == 0 && player == 'red' ? <>תורך!</> :
+          turn == 0 && player == 'yellow' ?
+            <>
+              האדום חושב
+              <div class="spinnerR">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </> :
+            turn == 1 && player == 'yellow' ? <>תורך!</> :
+              turn == 1 && player == 'red' ?
+                <>
+                  הצהוב חושב
+                  <div class="spinnerY">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </> : ''}
+      </>
+    }
+  };
+
   return (
     <div className={styles.app}>
-      {waiting ? <span style={{ color: "white" }}>ממתין לשחקן נוסף</span> : <>
+      {waiting ? <Waiting msg={"ממתין לשחקן נוסף"} /> : <>
         <header>
           <img src="https://stuntsoftware.com/img/4inarow/title.png" alt="4 in a row" />
           <div className={styles.headerInfo}>
@@ -248,6 +289,10 @@ function OnlinePublic() {
         <span className={styles.divider}></span>
         <main>
           {message && <PopUp msg={<span>השחקן השני התנתק,<br /> ניצחת טכנית</span>} click={() => nav('/')} clickMsg={"חזרה לדף הבית"} />}
+          {/* הכרזת תור מי */}
+          <div key={turn} className={turn == 0 ? styles.redTurnMsg : styles.yelTurnMsg}>
+            {manageTurns()}
+          </div>
           <table>
             <tbody>
               <tr className={`${fourInaRow.length > 0 && styles.darker}`}></tr>

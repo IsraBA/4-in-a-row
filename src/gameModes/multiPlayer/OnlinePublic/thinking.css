@@ -1,0 +1,107 @@
+.spinnerR {
+    position: relative;
+    margin-right: 35px;
+    margin-bottom: 5px;
+    width: 65px;
+    /* Adjust the width accordingly */
+    height: 16px;
+    /* Keep the height the same */
+}
+
+.spinnerR div {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: rgb(243, 44, 44);
+    border-radius: 50%;
+    animation: spinner-4t3wzl 2s infinite linear;
+}
+
+.spinnerR div:nth-child(1) {
+    left: 0;
+    animation-delay: 0.15s;
+    background-color: rgba(243, 44, 44, 0.9);
+}
+
+.spinnerR div:nth-child(2) {
+    left: 25%;
+    animation-delay: 0.3s;
+    background-color: rgba(243, 44, 44, 0.8);
+}
+
+.spinnerR div:nth-child(3) {
+    left: 50%;
+    animation-delay: 0.45s;
+    background-color: rgba(243, 44, 44, 0.7);
+}
+
+.spinnerR div:nth-child(4) {
+    left: 75%;
+    animation-delay: 0.6s;
+    background-color: rgba(243, 44, 44, 0.6);
+}
+
+.spinnerR div:nth-child(5) {
+    left: 100%;
+    animation-delay: 0.75s;
+    background-color: rgba(243, 44, 44, 0.5);
+}
+
+@keyframes spinner-4t3wzl {
+    0% {
+        transform: rotate(0deg) translateX(-50%);
+    }
+
+    100% {
+        transform: rotate(360deg) translateX(-50%);
+    }
+}
+
+.spinnerY {
+    position: relative;
+    margin-right: 35px;
+    margin-bottom: 5px;
+    width: 65px;
+    /* Adjust the width accordingly */
+    height: 16px;
+    /* Keep the height the same */
+}
+
+.spinnerY div {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: rgb(249, 234, 16);
+    border-radius: 50%;
+    animation: spinner-4t3wzl 2s infinite linear;
+}
+
+.spinnerY div:nth-child(1) {
+    left: 0;
+    animation-delay: 0.15s;
+    background-color: rgba(249, 234, 16, 0.9);
+}
+
+.spinnerY div:nth-child(2) {
+    left: 25%;
+    animation-delay: 0.3s;
+    background-color: rgba(249, 234, 16, 0.8);
+}
+
+.spinnerY div:nth-child(3) {
+    left: 50%;
+    animation-delay: 0.45s;
+    background-color: rgba(249, 234, 16, 0.7);
+}
+
+.spinnerY div:nth-child(4) {
+    left: 75%;
+    animation-delay: 0.6s;
+    background-color: rgba(249, 234, 16, 0.6);
+}
+
+.spinnerY div:nth-child(5) {
+    left: 100%;
+    animation-delay: 0.75s;
+    background-color: rgba(249, 234, 16, 0.5);
+}
