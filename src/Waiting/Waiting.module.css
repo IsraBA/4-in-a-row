@@ -10,7 +10,7 @@
     max-width: 150px;
 }
 
-.waitingScreen p {
+.message {
     font-size: 1.7rem;
     text-align: center;
     text-shadow: 5px 5px 10px #00000064;
