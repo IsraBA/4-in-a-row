@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from './app.module.css'
+import styles from './App.module.css'
 import { NavLink } from 'react-router-dom';
 import newGameBT2 from './assets/newGame2.png'
 

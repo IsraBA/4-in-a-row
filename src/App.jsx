@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useState } from 'react'
-import styles from './app.module.css'
+import styles from './App.module.css'
 import Local from './gameModes/Local/Local'
 import { Route, Routes } from 'react-router-dom';
 import OpenScreen from './OpenScreen'

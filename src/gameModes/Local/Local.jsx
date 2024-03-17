@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import io from 'socket.io-client'
 import Cell from '../../Cell/Cell'
-import styles from '../../app.module.css'
+import styles from '../../App.module.css'
 import Timer from '../../Timer/Timer';
 import redTag from '../../assets/תג אדום.png'
 import yelTag from '../../assets/תג צהוב.png'

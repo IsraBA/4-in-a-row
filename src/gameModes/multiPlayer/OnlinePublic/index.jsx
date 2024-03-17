@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Cell from '../../../Cell/Cell'
-import styles from '../../../app.module.css'
+import styles from '../../../App.module.css'
 import redTag from '../../../assets/תג אדום.png'
 import yelTag from '../../../assets/תג צהוב.png'
 import newGameBT2 from '../../../assets/newGame2.png'
