@@ -25,18 +25,20 @@ header {
 }
 
 /* כל מה שקשור לבחירת המשחק */
-#select{
+#select {
     width: 100%;
     justify-content: center;
     transition: 0.3s;
 }
-.selectMode{
+
+.selectMode {
     /* border: 2px solid white; */
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.bigImage{
+
+.bigImage {
     width: 22vw;
     min-width: 200px;
     transition: 0.3s;
@@ -51,7 +53,7 @@ header {
 
 }
 
-.headerInfo{
+.headerInfo {
     /* border: 2px solid white; */
     height: 100%;
     display: flex;
@@ -97,10 +99,12 @@ header img {
     margin-bottom: 1vw;
     font-weight: 400;
 }
+
 .winner img {
     width: 25vw;
     margin: 0;
 }
+
 .winner span {
     position: absolute;
     font-size: 3vw;
@@ -116,11 +120,13 @@ header img {
     justify-content: center;
     cursor: pointer;
 }
+
 .newGame img {
     width: 20vw;
     min-width: 170px;
     margin: 0;
 }
+
 .newGame span {
     position: absolute;
     font-size: 2vw;
@@ -142,6 +148,7 @@ header img {
     transform: scale(1);
     transition: 0.2s;
 }
+
 header button:hover {
     transform: scale(1.04);
     transition: 0.2s;
@@ -161,7 +168,7 @@ main {
     transition: 0.3s;
 }
 
-.redTurnMsg{
+.redTurnMsg {
     animation: turnMsg 0.7s ease-in-out forwards;
     margin-top: -30px;
     margin-bottom: 25px;
@@ -175,7 +182,8 @@ main {
     padding: 5px 20px;
     transition: 0.3s;
 }
-.yelTurnMsg{
+
+.yelTurnMsg {
     animation: turnMsg 0.7s ease-in-out forwards;
     margin-top: -30px;
     margin-bottom: 25px;
@@ -189,6 +197,7 @@ main {
     padding: 5px 20px;
     transition: 0.3s;
 }
+
 @keyframes turnMsg {
     0% {
         transform: translateY(20px);

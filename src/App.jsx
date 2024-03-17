@@ -1,9 +1,7 @@
 import React, { Suspense, useEffect, useState } from 'react'
 import styles from './app.module.css'
 import Local from './gameModes/Local/Local'
-// import OnlinePublic from './gameModes/multiPlayer/OnlinePublic/index'
-// import OnlinePrivate from './gameModes/multiPlayer/OnlinePrivate/index'
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import OpenScreen from './OpenScreen'
 
 const OnlinePublic = React.lazy(() => import('./gameModes/multiPlayer/OnlinePublic/index'))
