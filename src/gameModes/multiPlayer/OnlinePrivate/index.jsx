@@ -65,9 +65,8 @@ function OnlinePrivate() {
   socket.on('privateRoomCreated', (roomDetails) => {
     localStorage.roomId = roomDetails.roomId;
     localStorage.playerId = socket.id;
-    // console.log({ roomDetails })
     setRoomId(roomDetails.roomId);
-    setLink('http://localhost:5173/onlinePrivate/' + roomDetails.roomId); // add env
+    setLink(roomDetails.joinLink);
   })
 
   socket.on('privateRoomJoined', (roomDetails) => {
