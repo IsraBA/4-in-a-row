@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client';
 
-let prodaction = true;
+let prodaction = false;
 
 const URL = prodaction ? 'https://four-in-a-row-server-1.onrender.com' : 'http://localhost:3001';
 
