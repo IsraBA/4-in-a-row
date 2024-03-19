@@ -14,15 +14,15 @@ export default function OpenScreen() {
             <img className={!gameMode && styles.bigImage}
                 src="https://stuntsoftware.com/img/4inarow/title.png" alt="4 in a row" />
             <div className={styles.selectMode}>
-                <NavLink className={styles.newGame} to={'/onlinePublic'}>
+                <NavLink className={styles.gameModeBT} to={'/onlinePublic'}>
                     <img src={newGameBT2} alt="משחק אונליין" />
                     <span>משחק אונליין</span>
                 </NavLink>
-                <NavLink className={styles.newGame} to={'/onlinePrivate'}>
+                <NavLink className={styles.gameModeBT} to={'/onlinePrivate'}>
                     <img src={newGameBT2} alt="משחק אונליין פרטי" />
                     <span>משחק אונליין פרטי</span>
                 </NavLink>
-                <NavLink className={styles.newGame} to={'/local'}>
+                <NavLink className={styles.gameModeBT} to={'/local'}>
                     <img src={newGameBT2} alt="משחק מקומי" />
                     <span>משחק מקומי</span>
                 </NavLink>

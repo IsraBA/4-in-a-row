@@ -39,3 +39,47 @@
     color: #f9ea10;
     font-weight: 400;
 }
+
+@media (max-width: 820px) {
+
+    .red,
+    .yellow {
+        width: 38vw;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timeBox {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -3vw;
+    }
+
+    .timeBox img {
+        width: 100%;
+    }
+
+    .time {
+        position: absolute;
+        font-size: 5.5vw;
+        font-family: 'Chivo Mono', monospace;
+        font-weight: 900;
+        text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.511);
+    }
+
+    .red .title {
+        color: #f32c2c;
+        font-size: 4.5vw;
+        font-weight: 400;
+    }
+    
+    .yellow .title {
+        font-size: 4.5vw;
+        color: #f9ea10;
+        font-weight: 400;
+    }
+}
