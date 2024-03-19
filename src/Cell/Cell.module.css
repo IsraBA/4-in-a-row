@@ -38,3 +38,9 @@
     background-image: radial-gradient(circle at center center, #fff891, #fffef5), repeating-radial-gradient(circle at center center, #fff68f, #fffee9, 7px, transparent 14px, transparent 7px);
     background-blend-mode: multiply;
 }
+
+@media (max-width: 820px) {
+    .cell {
+        border: 2px solid rgb(87, 87, 255);
+    }
+}

@@ -433,17 +433,17 @@ tr {
     }
 
     .dropRed {
-        width: calc(9vw - 3px);
+        width: calc(9vw - 2px);
         aspect-ratio: 1/1;
-        max-width: 82px;
-        max-height: 82px;
+        max-width: 83px;
+        max-height: 83px;
     }
     
     .dropYellow {
-        width: calc(9vw - 3px);
+        width: calc(9vw - 2px);
         aspect-ratio: 1/1;
-        max-width: 82px;
-        max-height: 82px;
+        max-width: 83px;
+        max-height: 83px;
     }
     
     .popRedPiece {
