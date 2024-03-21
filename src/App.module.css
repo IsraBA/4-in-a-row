@@ -423,8 +423,8 @@ tr {
         bottom: 3vh;
     }
     
-    .newGame span {
-        font-size: 5vw;
+    .newGame span, .gameModeBT span {
+        font-size: 17px;
     }
     
     main {
